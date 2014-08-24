@@ -24,4 +24,4 @@ def secure_token
   end
 end
 
-StepUpDemo::Application.config.secret_key_base = secure_token
+StepupDemo::Application.config.secret_key_base = secure_token
