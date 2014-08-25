@@ -1,7 +1,7 @@
 @import "twitter/bootstrap";
 
 // Universal
-// Fix things going under fixed header. Refer to http://stackoverflow.com/questions/10336194/twitter-bootstrap-top-nav-bar-blocking-top-content-of-the-page
+// Best-practice fix for things going under fixed header. Refer to http://stackoverflow.com/questions/10336194/twitter-bootstrap-top-nav-bar-blocking-top-content-of-the-page
 body {
   padding-top: 60px;
 }
