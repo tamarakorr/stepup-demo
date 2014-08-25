@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Tammy Orr">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>StepUp Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +34,8 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
+
+        <!-- Combine branding and mobile menu collapse -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -43,8 +45,9 @@
           </button>
           <a class="navbar-brand" href="#">StepUp Demo</a>
         </div>
+
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          <!--form class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
@@ -52,7 +55,16 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+          </form-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- li class="active"><a href="#">Home</a></li-->
+            <li><a href="#">Post Vacancy</a></li>
+            <li><a href="#">Post Skill</a></li>
+            <li><a href="#">Sign in</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#"><img class="navbar-right" src="https://developer.linkedin.com/sites/default/files/signin_with_linkedin.png"></a></li>
+            <li><a href="#">Messages <span class="badge">2</span></a></li>
+          </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
@@ -60,9 +72,17 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Top Vacancies</h1>
-        <p>The map will be displayed up here.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        <!--h1>Top Vacancies</h1-->
+        <p>The map will be displayed in this gray area.</p>
+        <!--p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p-->
+        <ul class="list-group pull-left small">
+           <a href="#" class="list-group-item active small">
+             Top Vacancies
+           </a>
+           <li class="list-group-item small">1 Row1</li>
+           <li class="list-group-item small">2 Row2</li>
+           <li class="list-group-item small">3 Row3</li>
+        </ul>
       </div>
     </div>
 
@@ -70,19 +90,19 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>Browse Vacancies</h2>
-          <p>(Will display vacancy search)</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <!-- h2>Browse Vacancies</h2-->
+          <!-- p>(Will display vacancy search)</p-->
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Browse Vacancies</a></p>
         </div>
         <div class="col-md-4">
-          <h2>Browse Volunteers</h2>
-          <p>(Will display volunteer search)</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <!-- h2>Browse Volunteers</h2-->
+          <!-- p>(Will display volunteer search)</p-->
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Browse Volunteers</a></p>
        </div>
         <div class="col-md-4">
-          <h2>More Info</h2>
-          <p>Will display safety tips etc.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <!-- h2>More Info</h2-->
+          <!-- p>Will display safety tips etc.</p-->
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">More Info</a></p>
         </div>
       </div>
 
