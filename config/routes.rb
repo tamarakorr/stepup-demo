@@ -6,7 +6,7 @@ StepupDemo::Application.routes.draw do
   #get "static_pages/contact"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :volunteers, only: [:new, :create, :destroy]
+  resources :volunteers, only: [:new, :create, :destroy, :index]
   resources :ngos, only: [:new, :create, :destroy]
   resources :vacancies, only: [:new, :create, :destroy]
   root  'static_pages#home'

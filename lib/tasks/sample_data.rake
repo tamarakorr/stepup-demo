@@ -2,7 +2,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     
-    users = User.all(limit: 6)
+    users = User.all(limit: 7)
 
     users.each do |user|
       #content = Faker::Lorem.sentence(5)

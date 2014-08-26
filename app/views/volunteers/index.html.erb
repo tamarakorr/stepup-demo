@@ -1,0 +1,44 @@
+<% @volunteers = Volunteer.find(:all) %>
+
+<div class="col-xs-3">
+  <h2>Filter Results</h2>
+
+  <h3>Cause</h3>
+  <input placeholder="Cause"></input>
+
+  <h3>Region</h3>
+  <input placeholder="Region"></input>
+
+  <h3>Service</h3>
+  <input placeholder="Service"></input>
+
+  <div class="container">
+    <button class="btn">Apply</button>
+  </div>
+</div>
+
+<div class="col-xs-9">
+  <h3><%= @volunteers.count %> volunteers found:</h3>
+  <table class="table volunteers">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Cause</th>
+        <th>Work Region</th>
+        <th>Service</th>
+        <th>Remote Work?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @volunteers.each_with_index do |vol, vCount| %>
+        <tr>
+          <td><%= vCount + 1 %></td>
+          <td><%= vol.cause %></td>
+          <td><%= vol.work_region %></td>
+          <td><%= vol.service %></td>
+          <td><%= vol.remote_status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
