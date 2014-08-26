@@ -1,13 +1,24 @@
 <% provide(:title, @user.name) %>
 
-<div class="row">
-	<aside class="span4">
-		<section>
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-			<%= @user.email %>
-		</section>
-	</aside>
+<!--div class="col-xs-4">
+    <h1>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h1>
+    <%= @user.email %>
+</div-->
+<%= render 'shared/user_info' %>
+
+<div class="col-xs-8">
+  <% if @user.volunteer %>
+    <h3>My Volunteer Profile</h3>
+    <%= render @volunteer %>
+    <!--%= will_paginate @volunteer %-->
+  <% else %>
+    <h3>Create My Profile</h3>
+    <!--button type="button" class="btn btn-default btn-lg">I am a Volunteer</button-->
+    <%= button_to "I am a volunteer!", new_volunteer_path, :class => "btn btn-default btn-lg", :method => :get %>
+    <span><br/><br/>OR<br/><br/></span>
+    <button type="button" class="btn btn-default btn-lg">I am an NGO!</button>
+  <% end %>
 </div>

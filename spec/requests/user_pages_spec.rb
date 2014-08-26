@@ -59,4 +59,21 @@ describe "User pages" do
       end
     end
   end
+
+  describe "profile page" do
+    let(:user) { FactoryGirl.create(:user) }
+    let!(:v1) { FactoryGirl.create(:volunteer, user: user, cause: "Foo") }
+    #let!(:v2) { FactoryGirl.create(:volunteer, user: user, content: "Bar") }
+
+    before { visit user_path(user) }
+
+    it { should have_content(user.name) }
+    it { should have_title(user.name) }
+
+    describe "volunteer profile" do
+      it { should have_content(v1.cause) }
+      #it { should have_content(m2.content) }
+      #it { should have_content(user.volunteer.count) }
+    end
+  end  
 end

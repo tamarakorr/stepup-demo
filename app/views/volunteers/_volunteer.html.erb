@@ -1,0 +1,48 @@
+<!-- Viewing only -->
+
+<!--span class="cause"><%= volunteer.cause %></span-->
+
+<span class="timestamp">
+  Created <%= time_ago_in_words(volunteer.created_at) %> ago
+</span>
+
+<%= form_for(:volunteer, html: {class: "form-horizontal"}) do |f| %>
+  <div class="form-group">
+    <%= f.label :cause, class: "col-sm-3 control-label" %>
+    <%= f.text_field :cause, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :work_region, class: "col-sm-3 control-label" %>
+    <%= f.text_field :work_region, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :service, class: "col-sm-3 control-label" %>
+    <%= f.text_field :service, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :skill, class: "col-sm-3 control-label" %>
+    <%= f.text_field :skill, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :availability, class: "col-sm-3 control-label" %>
+    <%= f.text_field :availability, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :remote_status, class: "col-sm-3 control-label" %>
+    <%= f.text_field :remote_status, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_mobile, class: "col-sm-3 control-label" %>
+    <%= f.text_field :contact_mobile, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_city, class: "col-sm-3 control-label" %>
+    <%= f.text_field :contact_city, class: "col-sm-4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_country, class: "col-sm-3 control-label" %>
+    <%= f.text_field :contact_country, class: "col-sm-4" %>
+  </div>
+
+  <!--%= f.submit "Sign in", class: "btn btn-large btn-primary" %-->
+<% end %>

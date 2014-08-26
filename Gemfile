@@ -10,6 +10,8 @@ gem 'sprockets', '2.11.0'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'bcrypt-ruby', '3.1.2'
 
+gem 'faker'
+
 group :development, :test do
   #gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'

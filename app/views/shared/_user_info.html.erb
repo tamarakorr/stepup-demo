@@ -1,0 +1,8 @@
+<!-- Display gravatar, user name, and email address at the left side-->
+<div class="col-xs-4">
+  <%= link_to gravatar_for(current_user) %>
+  <h1>
+    <%= current_user.name %>
+  </h1>
+  <%= current_user.email %>
+</div>
