@@ -5,7 +5,7 @@ gem 'rails', '4.0.8'
 gem 'pg', '0.15.1'
 
 # Bootstrap/Jumbotron
-#gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'bcrypt-ruby', '3.1.2'

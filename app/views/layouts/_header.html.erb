@@ -26,11 +26,31 @@
         <!-- li class="active"><a href="#">Home</a></li-->
         <li><a href="#">Post Vacancy</a></li>
         <li><a href="#">Post Skill</a></li>
-        <li><%= link_to "Sign in", signin_path %></li>
-        <!--li><a href="#">Register</a></li-->
-        <li><%= link_to "Register", register_path %></li>
-        <li><a href="#"><img class="navbar-right" src="https://developer.linkedin.com/sites/default/files/signin_with_linkedin.png"></a></li>
-        <li><a href="#">Messages <span class="badge">2</span></a></li>
+        <% if !signed_in? %>
+          <li><%= link_to "Sign in", signin_path %></li>
+          <!--li><a href="#">Register</a></li-->
+          <li><%= link_to "Register", register_path %></li>
+          <li><a href="#"><img class="navbar-right" src="https://developer.linkedin.com/sites/default/files/signin_with_linkedin.png"></a></li>
+        <% end %>
+
+        <% if signed_in? %>
+          <li><a href="#">Messages <span class="badge">2</span></a></li>
+
+          <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              My Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Sign out", signout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
