@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @volunteer = @user.volunteer
     @ngo = @user.ngo
+    @vacancies = @ngo.vacancy
   end
 
   def new

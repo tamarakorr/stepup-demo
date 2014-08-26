@@ -24,23 +24,20 @@
       </form-->
       <ul class="nav navbar-nav navbar-right">
         <!-- li class="active"><a href="#">Home</a></li-->
-        <% if !signed_in? %>
-          <li><a href="#">Post Vacancy</a></li>
+        <% if !signed_in? || current_user.ngo.nil? %>
           <li><a href="#">Post Skill</a></li>
+        <% end %>
+        <% if !signed_in? || current_user.volunteer.nil? %>
+          <li><%= link_to "Post Vacancy", new_vacancy_path %></li>
+        <% end %>
 
+        <% if !signed_in? %>
           <li><%= link_to "Sign in", signin_path %></li>
           <li><%= link_to "Register", register_path %></li>
           <li><a href="#"><img class="navbar-right" src="https://developer.linkedin.com/sites/default/files/signin_with_linkedin.png"></a></li>
         <% end %>
 
         <% if signed_in? %>
-          <% if current_user.ngo.nil? %>
-            <li><a href="#">Post Skill</a></li>
-          <% end %>
-          <% if current_user.volunteer.nil? %>
-            <li><a href="#">Post Vacancy</a></li>
-          <% end %>
-
           <li><a href="#">Messages <span class="badge">2</span></a></li>
 
           <li id="fat-menu" class="dropdown">

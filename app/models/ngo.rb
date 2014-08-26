@@ -6,4 +6,6 @@ class Ngo < ActiveRecord::Base
   validates :contact_city, presence: true
   validates :contact_country, presence: true
   validates :contact_phone, presence: true
+
+  has_many :vacancy, dependent: :destroy         # Zero or more
 end

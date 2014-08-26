@@ -1,0 +1,10 @@
+<% if signed_in? %>
+  <%= render 'shared/user_info' %>
+
+  <div class="col-xs-8">
+    <h3>Create Vacancy: <%=current_user.ngo.name%></h3>
+    <%= render 'shared/vacancy_form' %>
+  </div>
+<% else %>
+  <h3>Ooooopps! A problem occurred.</h3>
+<% end %>

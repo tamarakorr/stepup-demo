@@ -25,7 +25,7 @@ class VolunteersController < ApplicationController
   private
 
     def volunteer_params
-      params.require(:volunteer).permit(:cause,:work_region,:skill,:availability,
+      params.require(:volunteer).permit(:user_id,:cause,:work_region,:skill,:availability,
         :service,:remote_status,:contact_mobile,:contact_city,:contact_country)
     end
 end
