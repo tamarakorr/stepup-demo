@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826080625) do
+ActiveRecord::Schema.define(version: 20140826105918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,5 +27,26 @@ ActiveRecord::Schema.define(version: 20140826080625) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+
+  create_table "volunteers", force: true do |t|
+    t.integer  "user_id"
+    t.string   "cause"
+    t.string   "work_region"
+    t.string   "skill"
+    t.string   "availability"
+    t.string   "service"
+    t.string   "remote_status"
+    t.string   "contact_mobile"
+    t.string   "contact_city"
+    t.string   "contact_country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "volunteers", ["cause"], name: "index_volunteers_on_cause", using: :btree
+  add_index "volunteers", ["remote_status"], name: "index_volunteers_on_remote_status", using: :btree
+  add_index "volunteers", ["service"], name: "index_volunteers_on_service", using: :btree
+  add_index "volunteers", ["user_id", "created_at"], name: "index_volunteers_on_user_id_and_created_at", using: :btree
+  add_index "volunteers", ["work_region"], name: "index_volunteers_on_work_region", using: :btree
 
 end
