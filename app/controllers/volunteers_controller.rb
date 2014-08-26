@@ -14,7 +14,8 @@ class VolunteersController < ApplicationController
       flash[:success] = "Volunteer profile created!"
       redirect_to root_url
     else
-      render 'static_pages/home'
+      #render 'static_pages/home'
+      render new_volunteer_path
     end
   end
 

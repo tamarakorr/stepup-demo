@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-  has_one :volunteer   # Zero or one
+  has_one :volunteer, dependent: :destroy   # Zero or one
+  has_one :ngo, dependent: :destroy         # Zero or one
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

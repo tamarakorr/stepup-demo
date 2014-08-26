@@ -1,12 +1,5 @@
 <% provide(:title, @user.name) %>
 
-<!--div class="col-xs-4">
-    <h1>
-      <%= gravatar_for @user %>
-      <%= @user.name %>
-    </h1>
-    <%= @user.email %>
-</div-->
 <%= render 'shared/user_info' %>
 
 <div class="col-xs-8">
@@ -14,11 +7,16 @@
     <h3>My Volunteer Profile</h3>
     <%= render @volunteer %>
     <!--%= will_paginate @volunteer %-->
+
+  <% elsif @user.ngo %>
+    <h3>My NGO Profile</h3>
+    <%= render @ngo %>
+
   <% else %>
     <h3>Create My Profile</h3>
     <!--button type="button" class="btn btn-default btn-lg">I am a Volunteer</button-->
     <%= button_to "I am a volunteer!", new_volunteer_path, :class => "btn btn-default btn-lg", :method => :get %>
     <span><br/><br/>OR<br/><br/></span>
-    <button type="button" class="btn btn-default btn-lg">I am an NGO!</button>
+    <%= button_to "I am an NGO!", new_ngo_path, :class => "btn btn-default btn-lg", :method => :get %>
   <% end %>
 </div>

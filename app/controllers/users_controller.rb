@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @volunteer = @user.volunteer
+    @ngo = @user.ngo
   end
 
   def new

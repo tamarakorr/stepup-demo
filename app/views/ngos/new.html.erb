@@ -1,0 +1,10 @@
+<% if signed_in? %>
+  <%= render 'shared/user_info' %>
+
+  <div class="col-xs-8">
+    <h3>Create My NGO Profile</h3>
+    <%= render 'shared/ngo_form' %>
+  </div>
+<% else %>
+  <h3>Ooooopps! A problem occurred.</h3>
+<% end %>
