@@ -1,14 +1,14 @@
 <div class="col-xs-3">
-  <h2>Filter Results</h2>
+  <h3>Filter Results</h3>
 
   <h3>Cause</h3>
-  <input placeholder="Cause"></input>
+  <input placeholder="Cause" style="width:90%"></input>
 
   <h3>Region</h3>
-  <input placeholder="Region"></input>
+  <input placeholder="Region" style="width:90%"></input>
 
   <h3>Service</h3>
-  <input placeholder="Service"></input>
+  <input placeholder="Service" style="width:90%"></input>
 
   <div class="container">
     <button class="btn">Apply</button>
@@ -16,7 +16,7 @@
 </div>
 
 <div class="col-xs-9">
-  <h3><%= @volunteers.count %> volunteers found:</h3>
+  <h3><%= @volunteers.count %> volunteers found</h3>
   <table class="table table-hover volunteers">
     <thead>
       <tr>
@@ -30,7 +30,8 @@
     <tbody>
       <% @volunteers.each_with_index do |vol, vCount| %>
         <tr>
-          <td><%= vCount + 1 %></td>
+          <!-- Item number -->
+          <td><%= (@volunteers.current_page - 1) * @volunteers.per_page + (vCount + 1) %></td>
           <td><%= vol.cause %></td>
           <td><%= vol.work_region %></td>
           <td><%= vol.service %></td>
