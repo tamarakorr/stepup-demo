@@ -3,8 +3,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @volunteer = @user.volunteer
     @ngo = @user.ngo
-    if @ngo
-      @vacancies = @ngo.vacancy
+    if ! (@ngo.nil?)
+      if Vacancy.exists?(ngo_id: @ngo.id)
+        @vacancies = @ngo.vacancy
+      end
     end
   end
 

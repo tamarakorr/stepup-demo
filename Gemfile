@@ -16,6 +16,7 @@ gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap'            # Also see patch
 
 gem 'gmaps4rails'
+gem 'countries'                           # See https://github.com/hexorx/countries
 
 group :development, :test do
   #gem 'sqlite3', '1.3.8'
