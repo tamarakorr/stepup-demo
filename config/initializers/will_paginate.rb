@@ -1,5 +1,6 @@
 # File config/initializers/will_paginate.rb
 # From https://gist.github.com/1214011
+# See patch note at http://stackoverflow.com/questions/23154999/twitter-bootstrap-work-with-will-paginate
 
 module WillPaginate
     module ActionView
