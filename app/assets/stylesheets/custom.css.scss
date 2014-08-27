@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-$grayLighter: #eee; // TODO Crude hack as bootstrap not working
-
 // For debug box:
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -67,7 +65,7 @@ aside {
   section {
     padding: 10px 0;
     margin-left: 20px;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid gray-lighter;
     &:first-child {
       border: 0;
       padding-top: 0;

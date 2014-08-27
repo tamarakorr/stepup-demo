@@ -1,20 +1,29 @@
 <% provide(:title, "Sign in") %>
 
-<h1>Sign in</h1>
+  <div class="container">
+    <h1 class="col-md-offset-1">Sign in</h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= form_for(:session, url: sessions_path, html: {class: "form-horizontal"}) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <div class="form-group">
+        <%= f.label :email, class: "col-sm-2 control-label" %>
+        <%= f.text_field :email, class: "col-sm-2" %>
+      </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <div class="form-group">
+        <%= f.label :password, class: "col-sm-2 control-label" %>
+        <%= f.password_field :password, class: "col-sm-2" %>
+      </div>
 
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Sign in", class: "btn btn-lg btn-primary col-sm-2 col-md-offset-2" %>
     <% end %>
 
-    <p>New user? <%= link_to "Register now!", register_path %></p>
+    <br />
+    <br />
+    <br />
+    <hr>
+    <p class="col-md-offset-2">-- OR -- New user?</p>
+    <%= button_to "Register now!", register_path,
+      :class => "btn btn-primary btn-large col-sm-2 col-md-offset-2", :method => :get %></p>
+
   </div>
-</div>
