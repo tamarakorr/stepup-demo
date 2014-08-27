@@ -1,4 +1,5 @@
-<% @volunteers = Volunteer.find(:all) %>
+<% @volunteers = Volunteer.order(cause: :asc, work_region: :asc,
+  service: :asc).find(:all) %>
 
 <div class="col-xs-3">
   <h2>Filter Results</h2>
