@@ -2,6 +2,8 @@ class VolunteersController < ApplicationController
   before_action :signed_in_user  #, only: [:create, :destroy]
 
   def index
+    @volunteers = Volunteer.order(cause: :asc, work_region: :asc,
+      service: :asc).paginate(page: params[:page], per_page: 15)
   end
 
   def new

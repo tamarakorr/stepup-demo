@@ -1,4 +1,4 @@
-@import "twitter/bootstrap";
+@import "bootstrap";
 
 $grayLighter: #eee; // TODO Crude hack as bootstrap not working
 
@@ -114,5 +114,9 @@ input {
 }
 
 .field_with_errors {
-  @extend .has-error;
+  @extend .has-error !optional;
+}
+
+.jumbotron {
+  margin: 0 0 50px 0;
 }
