@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826200125) do
+ActiveRecord::Schema.define(version: 20140827150654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(version: 20140826200125) do
 
   add_index "ngos", ["name"], name: "index_ngos_on_name", using: :btree
   add_index "ngos", ["user_id"], name: "index_ngos_on_user_id", using: :btree
+
+  create_table "reportmap", id: false, force: true do |t|
+    t.string  "work_region"
+    t.integer "num",         limit: 8
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -54,6 +59,8 @@ ActiveRecord::Schema.define(version: 20140826200125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "language"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
   end
 
   add_index "vacancies", ["is_active"], name: "index_vacancies_on_is_active", using: :btree

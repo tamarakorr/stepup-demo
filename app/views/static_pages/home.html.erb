@@ -76,7 +76,21 @@
       };
 
       var map = new google.maps.Map(document.getElementById('map'), myOptions);
-        
+      
+      // Markers must be added after the map is constructed.
+      <% Vacancy.all.each do |vac| %>
+        //var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+        <% if ! (vac.latitude.nil? || vac.longitude.nil?) %>
+          var marker_title = "<%= vac.title + " - " + vac.work_region %>";
+          var myLatlng = new google.maps.LatLng(<%= vac.latitude %>, <%= vac.longitude %>);
+          var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: marker_title,
+            icon: "http://google.com/mapfiles/ms/micons/red.png"
+          });
+        <% end %>
+      <% end %>
     </script>
   </body>
 </html>
