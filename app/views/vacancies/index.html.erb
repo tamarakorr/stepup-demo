@@ -1,0 +1,49 @@
+<!-- Vacancies index-->
+<div class="col-xs-3">
+  <h3>Filter Results</h3>
+
+  <h3>Cause</h3>
+  <input placeholder="Cause" style="width:90%"></input>
+
+  <h3>Region</h3>
+  <input placeholder="Region" style="width:90%"></input>
+
+  <h3>Service</h3>
+  <input placeholder="Service" style="width:90%"></input>
+
+  <div class="container">
+    <button class="btn">Apply</button>
+  </div>
+</div>
+
+<div class="col-xs-9">
+  <h3><%= @vacancies.count %> vacancies found</h3>
+  <table class="table table-hover vacancies">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>NGO</th>
+        <th>Work Region</th>
+        <th>Service</th>
+        <th>Remote Work?</th>
+        <th>When?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vacancies.each_with_index do |vac, vCount| %>
+        <tr>
+          <!-- Item number -->
+          <td><%= (@vacancies.current_page - 1) * @vacancies.per_page + (vCount + 1) %></td>
+          <td><%= vac.title %></td>
+          <td><%= vac.ngo.name %></td>
+          <td><%= vac.work_region %></td>
+          <td><%= vac.service %></td>
+          <td><%= vac.remote_status %></td>
+          <td><%= vac.when_needed %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @vacancies, renderer: BootstrapPagination::Rails %>
+</div>

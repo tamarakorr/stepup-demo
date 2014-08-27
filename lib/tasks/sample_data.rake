@@ -1,7 +1,18 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    
+
+    service_list = ["Customer Service", "Construction", "Public Speaking", 
+          "Teaching/Instruction", "Executive Admin", "Strategic Planning", 
+          "Product Development", "Market Research", "Business Analysis", 
+          "Professional Law Experience", "Fundraising & Grant Development", 
+          "Business Development", "Web Design", "Mental Health", "Legal (General)", 
+          "Financial Auditing", "Accounting", "Self Defense Trainer",
+          "Counseling"]
+    availability_list = ["6-8pm Tuesdays", "4 hrs/wk", "September 3", "Anytime"]
+    language_list = ["English", "French"]
+    remote_status_list = ["Yes", "No", "Both"]
+
     # users = User.all(limit: 7)
 
     # Create 50 UK users
@@ -19,9 +30,9 @@ namespace :db do
         "Women"].sample
       work_region = Faker::Address.country
       skill = [""].sample
-      availability = ["6-8pm Tuesdays", "4 hrs/wk", "September 3", "Anytime"].sample
-      service = ["Self Defense Trainer", "Web Developer", "Counselor", "Teacher"].sample
-      remote_status = ["Yes", "No", "Both"].sample
+      availability = availability_list.sample
+      service = service_list.sample
+      remote_status = remote_status_list.sample
       contact_mobile = Faker::PhoneNumber.cell_phone
       contact_city = Faker::Address.city
       contact_country = Faker::Address.country #["United Kingdom", "India"].sample
@@ -36,7 +47,8 @@ namespace :db do
     50.times do
       user = createFakeUser()
 
-      name = Faker::Lorem.word + " " + ["Hospice", "Relief Agency", "Foundation", "Academy",
+      name = Faker::Lorem.word.capitalize + " " + ["Hospice", "Relief Agency", "Foundation",
+        "Academy",
         "Missions", "Fund", "Services", "Institute", "Centre", "Year", "International",
         "Britain", "of the UK", "Societies", "Society", "Federation", "Express",
         "Corps", "Alliance"].sample
@@ -45,6 +57,25 @@ namespace :db do
       contact_phone = Faker::PhoneNumber.phone_number
       user.create_ngo!(name: name, contact_city: contact_city,
         contact_country: contact_country, contact_phone: contact_phone)
+
+      # Create random vacancies per NGO
+      numVacancies = [0, 1, 2].sample
+      numVacancies.times do
+        service = service_list.sample
+        language = language_list.sample
+        work_region = Faker::Address.country
+        remote_status = remote_status_list.sample
+        when_needed = ["Now", "Sept. 7", "Sept. 16", "September", "October 2014",
+          "March 2015"].sample
+        desc = Faker::Lorem.sentence
+        title = service + " " + ["needed", "needed urgently", "- work with a great team!",
+          "position"].sample
+        is_active = true
+
+        user.ngo.vacancy.create!(service: service, language: language, work_region: work_region,
+          remote_status: remote_status, when_needed: when_needed, desc: desc,
+          title: title, is_active: is_active)
+      end
     end
   end
 end
