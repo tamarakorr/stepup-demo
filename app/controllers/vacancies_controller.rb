@@ -25,6 +25,10 @@ class VacanciesController < ApplicationController
   def destroy
   end
 
+  def show
+    @vacancy = Vacancy.find(params[:id])
+  end
+
   private
 
     def vacancy_params
