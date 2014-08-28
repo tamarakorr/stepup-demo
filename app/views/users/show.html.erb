@@ -4,9 +4,7 @@
 
 <div class="col-xs-8">
   <% if @user.volunteer %>
-    <h3>My Volunteer Profile</h3>
-    <%= render @volunteer %>
-    <!--%= will_paginate @volunteer %-->
+    <%= render @volunteer, whose: "My" %>
 
   <% elsif @user.ngo %>
     <div class="ngo-profile">
@@ -16,7 +14,6 @@
 
   <% else %>
     <h3>Create My Profile</h3>
-    <!--button type="button" class="btn btn-default btn-lg">I am a Volunteer</button-->
     <%= button_to "I am a volunteer!", new_volunteer_path, :class => "btn btn-default btn-lg", :method => :get %>
     <span><br/><br/>OR<br/><br/></span>
     <%= button_to "I am an NGO!", new_ngo_path, :class => "btn btn-default btn-lg", :method => :get %>

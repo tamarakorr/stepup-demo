@@ -24,6 +24,10 @@ class VolunteersController < ApplicationController
   def destroy
   end
 
+  def show
+    @volunteer = Volunteer.find(params[:id])
+  end
+
   private
 
     def volunteer_params

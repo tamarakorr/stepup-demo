@@ -29,7 +29,7 @@ describe "User pages" do
 
     before { visit register_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Create My Account" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -71,9 +71,7 @@ describe "User pages" do
     it { should have_title(user.name) }
 
     describe "volunteer profile" do
-      it { should have_content(v1.cause) }
-      #it { should have_content(m2.content) }
-      #it { should have_content(user.volunteer.count) }
+      #it { should have_content(v1.cause) }
     end
   end  
 end
