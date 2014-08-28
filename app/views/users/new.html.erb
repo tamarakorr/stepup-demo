@@ -1,38 +1,44 @@
 <% provide(:title, 'Register') %>
 
-<div class="container">
-  <h1>Register</h1>
+<h1>Register</h1>
+<%= form_for @user, html: {class: "form-horizontal"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
 
-    <!-- The line below is BAD BAD BAD, will cause form not to be recognized-->
-    <!--form class="form-horizontal"-->
+    <div class="form-group">
+      <%= f.label :name, class: "col-sm-4 control-label" %>
+      <%= f.text_field :name, class: "col-sm-4", placeholder: "Your public name on StepUp",
+        autofocus: true %>
+    </div>
 
-      <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :email, class: "col-sm-4 control-label" %>
+      <%= f.text_field :email, class: "col-sm-4", placeholder: "Your login" %>
+    </div>
 
-          <div class="form-group">
-            <%= f.label :name, class: "col-sm-2 control-label" %>
-            <%= f.text_field :name, class: "col-sm-4" %>
-          </div>
+    <div class="form-group">
+      <%= f.label :password, class: "col-sm-4 control-label" %>
+      <%= f.password_field :password, class: "col-sm-4", placeholder: "At least 6 characters" %>
+    </div>
 
-          <div class="form-group">
-            <%= f.label :email, class: "col-sm-2 control-label" %>
-            <%= f.text_field :email, class: "col-sm-4" %>
-          </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirmation", class: "col-sm-4 control-label" %>
+      <%= f.password_field :password_confirmation, class: "col-sm-4", placeholder: "Retype your password" %>
+    </div>
 
-          <div class="form-group">
-            <%= f.label :password, class: "col-sm-2 control-label" %>
-            <%= f.password_field :password, class: "col-sm-4" %>
-          </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="terms_and_conditions">Terms and Conditions</label>
+      <div class="col-sm-4">
+        <textarea class="form-control" readonly="readonly" rows="3" id="terms_and_conditions"><%= Faker::Lorem.paragraph(25) %></textarea>
+      </div>
+    </div>
 
-          <div class="form-group">
-            <%= f.label :password_confirmation, "Confirmation", class: "col-sm-2 control-label" %>
-            <%= f.password_field :password_confirmation, class: "col-sm-4" %>
-          </div>
+    <div class="checkbox">
+      <label class="checkbox col-offset-md-6 span2">
+        <input type="checkbox"> I have read these Terms and Conditions, and I totally agree!
+      </label>
+    </div>
 
-        <%= f.submit "Create my account", class: "btn btn-large btn-primary col-md-offset-2" %>
-      <% end %>
+  <%= f.submit "Create My Account", class: "btn btn-lg btn-primary col-md-offset-4" %>
+<% end %>
 
-      <%= render 'layouts/footer' %>
-
-  <!--/form-->
-</div>
+<%= render 'layouts/footer' %>

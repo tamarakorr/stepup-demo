@@ -7,22 +7,28 @@
 
       <div class="form-group">
         <%= f.label :email, class: "col-sm-2 control-label" %>
-        <%= f.text_field :email, class: "col-sm-2" %>
+        <%= f.text_field :email, class: "col-sm-4" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password, class: "col-sm-2 control-label" %>
-        <%= f.password_field :password, class: "col-sm-2" %>
+        <%= f.password_field :password, class: "col-sm-4" %>
+        <a href="#" style="margin:10px;">Forgot my password!</a>
       </div>
 
       <%= f.submit "Sign in", class: "btn btn-lg btn-primary col-sm-2 col-md-offset-2" %>
+
     <% end %>
+
 
     <br />
     <br />
     <br />
     <hr>
-    <p class="col-md-offset-2">-- OR -- New user?</p>
+    <div class="col-md-offset-1">
+      <h2>New user?</h2>
+    </div>
+    <br />
     <%= button_to "Register now!", register_path,
       :class => "btn btn-primary btn-large col-sm-2 col-md-offset-2", :method => :get %></p>
 

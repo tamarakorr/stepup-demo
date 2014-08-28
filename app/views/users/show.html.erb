@@ -9,8 +9,10 @@
     <!--%= will_paginate @volunteer %-->
 
   <% elsif @user.ngo %>
-    <h3>My NGO Profile</h3>
-    <%= render @ngo %>
+    <div class="ngo-profile">
+      <h3>My NGO Profile</h3>
+      <%= render @ngo %>
+    </div>
 
   <% else %>
     <h3>Create My Profile</h3>
