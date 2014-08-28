@@ -1,22 +1,14 @@
-@import "bootstrap";
-//@import "magic-bootstrap";
+@import "bootstrap.min";
 
-// $brand-primary: #FF7518;
-
-#map {
-  // Shadow beneath map
-  box-shadow: 0px 2px 5px #004B76;
+.table {
+  font-size: 16px;
 }
 
 .navbar {
+  // (Superhero theme has transparent navbar by default)
+  background-color: #2b3e50;
 
   height: 65px;
-  //background-color: #FF7518;
-  //background: linear-gradient(to left, #febc90, white);
-  //background-color: #A0D3D3; // black;
-  
-  background-color: white; //#E5E3DF;
-  box-shadow: 0px 2px 5px #004B76; //#A0D3D3;
 
   .container {
     margin-left: 0;
@@ -26,7 +18,6 @@
   .navbar-brand {
     padding-top: 0;
     margin-top: 5px;
-    //color: #93440e; //#FF7518;
     font-size: 42px;
   }
 
@@ -49,18 +40,7 @@
 
   a {
     margin-top: 10px;
-    //color: black;
-    //nah font-family: "LilyUPC";
-    //nah font-family: "SimHei";
-    //meh font-family: "Utsaah";
-    //font-family: "Euphemia";
-    font-family: "Oswald";
-
-    //font-family: "Plantagenet Cherokee";
-    //font-family: "PT Serif";
-    //font-family: "Traditional Arabic";
     font-size: 18px;
-    //color: #7a380c;
   }
 }
 
@@ -88,15 +68,15 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   //border-top: 1px solid #eaeaea;
-  color: #999;
+  //color: #999;
 }
 
 footer a {
-  color: #555;
+  //color: #555;
 }
 
 footer a:hover {
-  color: #222;
+  //color: #222;
 }
 
 footer small {
