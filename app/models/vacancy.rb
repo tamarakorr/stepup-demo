@@ -1,6 +1,7 @@
 class Vacancy < ActiveRecord::Base
   before_save {
     # Fill in latitude and longitude
+    # TODO move latitude/longitude logic to helper function
     c = Country::find_country_by_name(work_region)
     if ! (c.nil?)
       lat = c.latitude.to_f

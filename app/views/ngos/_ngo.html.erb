@@ -19,16 +19,16 @@
     <%= f.label :contact_country, class: "col-sm-3 control-label" %>
     <%= f.text_field :contact_country, class: "col-sm-4" %>
   </div>
-
-  <!--%= f.submit "Sign in", class: "btn btn-large btn-primary" %-->
 <% end %>
 
-<!-- Show this NGO's vacancies-->
 <% if ! (@vacancies.nil?) %>
+  <!-- Show this NGO's vacancies-->
   <% if @vacancies.count > 0 %>
     <h3>My Vacancies</h3>
+    <ol class="vacancies">
+      <%= render @vacancies %>
+    </ol>
+  <% else %>
+    <!-- No vacancies to display-->
   <% end %>
-  <ol class="vacancies">
-    <%= render @vacancies %>
-  </ol>
 <% end %>
