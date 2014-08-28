@@ -5,10 +5,16 @@
 }
 
 .navbar {
-  // (Superhero theme has transparent navbar by default)
+  // (Superhero theme has transparent navbar by default. Weird when scrolling down.)
   background-color: #2b3e50;
 
   height: 65px;
+
+  a {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
 
   .container {
     margin-left: 0;
@@ -19,6 +25,7 @@
     padding-top: 0;
     margin-top: 5px;
     font-size: 42px;
+    font-weight: lighter;
   }
 
   // Align menu images
@@ -33,15 +40,11 @@
   }
   .navbar-right {
     .dropdown-toggle {
-      margin-top: 22px;
+      margin-top: 19px;
       float: right;
     }
   }
 
-  a {
-    margin-top: 10px;
-    font-size: 18px;
-  }
   .dropdown-menu {
     li {
       a {
