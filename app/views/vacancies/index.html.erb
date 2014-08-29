@@ -26,12 +26,13 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Title</th>
+        <th><%= sortable "title", "Title" %></th>
+        <!-- NGO name not easily sortable in different table w/ Rails :( -->
         <th>NGO</th>
-        <th>Work Region</th>
-        <th>Service</th>
-        <th>Remote Work?</th>
-        <th>When?</th>
+        <th><%= sortable "work_region", "Work Region" %></th>
+        <th><%= sortable "service", "Service" %></th>
+        <th><%= sortable "remote_status", "Remote Work?" %></th>
+        <th><%= sortable "when_needed", "When?" %></th>
       </tr>
     </thead>
     <tbody>
