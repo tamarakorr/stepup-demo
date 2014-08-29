@@ -81,7 +81,7 @@ input[type="submit"] {
   font-weight: bold;
 }
 
-.bigger {
+/*.bigger {
   zoom:1.5;
   transform:scale(1.5);
   -ms-transform:scale(1.5);
@@ -97,7 +97,7 @@ input[type="submit"] {
 }
 .bigger-checkbox {
   margin-top: -10px;
-}
+} */
 
 // For debug box:
 @mixin box_sizing {
