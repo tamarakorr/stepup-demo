@@ -39,7 +39,7 @@
         <% if !signed_in? %>
           <li><%= link_to "Sign in", signin_path %></li>
           <li><%= link_to "Register", register_path %></li>
-          <li><a href="#"><img class="navbar-right" src="https://developer.linkedin.com/sites/default/files/signin_with_linkedin.png"></a></li>
+          <li><a href="#"><img class="navbar-right" src="<%= asset_path('signin_with_linkedin.png') %>"></a></li>
         <% end %>
 
         <% if signed_in? %>
