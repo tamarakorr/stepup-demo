@@ -122,16 +122,6 @@ body {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  //border-top: 1px solid #eaeaea;
-  //color: #999;
-}
-
-footer a {
-  //color: #555;
-}
-
-footer a:hover {
-  //color: #222;
 }
 
 footer small {
@@ -159,7 +149,6 @@ footer ul li {
 }
 
 /* sidebar */
-
 aside {
   section {
     padding: 10px 0;
@@ -193,7 +182,6 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  //width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -239,3 +227,49 @@ div[class*='boxes-select'] {
   margin-top: 10px;
 }
 
+/* Fancy scrollbars - see http://css-tricks.com/custom-scrollbars-in-webkit/ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,235,200,0.3); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255,235,200,0.9);
+}
+
+/* Bigger, brighter focus outline */
+input:focus {
+  box-shadow: 0px 0px 7px cyan;
+  transition:.2s linear;
+  -webkit-transition:.2s linear;
+  -moz-transition:.2s linear;
+}
+
+// Triangles for sorting tables
+th .asc:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+th .desc:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
