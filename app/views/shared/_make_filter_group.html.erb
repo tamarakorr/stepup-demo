@@ -1,0 +1,13 @@
+<!--Makes a group of checkboxes in a well for filtering-->
+<!-- Requires parameter groups: array of strings-->
+<!-- Parameter outer-class: determines outer div classes-->
+
+<div class="<%= outer_class %>">
+  <div class="control-group">
+    <div class="controls span6">
+      <% groups.each do |group| %>
+        <%= render 'shared/make_checkbox', text: raw('<span class="boxes-select-label">') + group + raw('</span>') %>
+      <% end %>
+    </div><!-- /controls -->
+  </div><!-- /control-group -->
+</div><!-- /boxes-select -->

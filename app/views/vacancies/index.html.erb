@@ -2,14 +2,20 @@
 <div class="col-xs-3">
   <h3>Filter Results</h3>
 
-  <h3>Cause</h3>
-  <input type="text" placeholder="Cause" style="width:90%"></input>
-
-  <h3>Region</h3>
-  <input type="text" placeholder="Region" style="width:90%"></input>
+  <h3>Work Region</h3>
+  <%= render 'shared/make_filter_group',
+      outer_class: "boxes-select boxes-select-short well",
+      groups: Vacancy.pluck('DISTINCT work_region').sort! %>
 
   <h3>Service</h3>
-  <input type="text" placeholder="Service" style="width:90%"></input>
+  <%= render 'shared/make_filter_group',
+      outer_class: "boxes-select boxes-select-short well",
+      groups: Volunteer.pluck('DISTINCT service').sort! %>
+
+  <h3>NGO</h3>
+  <%= render 'shared/make_filter_group',
+      outer_class: "boxes-select boxes-select-short well",
+      groups: Vacancy.joins(:ngo).pluck('DISTINCT name').sort! %>
 
   <button class="btn btn-large btn-primary">Apply</button>  
 </div>
