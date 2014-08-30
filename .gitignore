@@ -9,6 +9,9 @@
 /log/*.log
 /tmp
 
+# 30 August tko - Ignore precompiled assets
+/public/assets
+
 # Ignore other unneeded files.
 database.yml
 doc/
