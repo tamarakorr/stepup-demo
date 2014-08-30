@@ -199,3 +199,24 @@ input {
 // Tables
 .table thead > tr > th { border-bottom: 1px solid #bebebe; }
 .table tbody > tr > td { border-bottom: 1px solid #717171; }
+
+// Checkbox lists
+div[class*='boxes-select'] {
+  margin-left: 10px;
+  overflow: auto;
+  padding-top: 0;
+}
+.boxes-select-medium {
+  height: 175px;
+}
+.boxes-select-short {
+  height: 120px;
+}
+.boxes-select-label {
+  font-size: 16px;
+  margin-left: 5px;
+}
+#inlineCheckbox {
+  margin-left: -15px;
+  margin-top: 10px;
+}
