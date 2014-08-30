@@ -4,22 +4,19 @@ ruby '2.0.0'
 gem 'rails', '4.0.8'
 gem 'pg', '0.15.1'
 
-# Bootstrap/Jumbotron
+# Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
-#gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'bcrypt-ruby', '3.1.2'
 
 gem 'faker'
 gem 'will_paginate', '3.0.4'
-#gem 'bootstrap-will_paginate', '0.0.9'  # BAD!
 gem 'will_paginate-bootstrap'            # Also see patch
 
 gem 'gmaps4rails'
 gem 'countries'                           # See https://github.com/hexorx/countries
 
 group :development, :test do
-  #gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'factory_girl_rails', '4.2.0'
 end
