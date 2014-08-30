@@ -220,3 +220,21 @@ div[class*='boxes-select'] {
   margin-left: -15px;
   margin-top: 10px;
 }
+
+.bigger {
+  zoom: 1.5;
+  transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+.bigger-checkbox {
+  margin-top: -10px;
+}
