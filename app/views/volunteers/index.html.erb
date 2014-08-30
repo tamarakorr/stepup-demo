@@ -19,10 +19,10 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Cause</th>
-        <th>Work Region</th>
-        <th>Service</th>
-        <th>Remote Work?</th>
+        <th><%= sortable "service", "Service" %></th>
+        <th><%= sortable "remote_status", "Remote Work?" %></th>
+        <th><%= sortable "cause", "Cause" %></th>
+        <th><%= sortable "work_region", "Work Region" %></th>
       </tr>
     </thead>
     <tbody>
@@ -30,10 +30,10 @@
           <tr onclick="location.href='<%= volunteer_path(vol) %>'">
             <!-- Item number -->
             <td><%= (@volunteers.current_page - 1) * @volunteers.per_page + (vCount + 1) %></td>
-            <td><%= vol.cause %></td>
-            <td><%= vol.work_region %></td>
             <td><%= vol.service %></td>
             <td><%= vol.remote_status %></td>
+            <td><%= vol.cause %></td>
+            <td><%= vol.work_region %></td>
           </tr>
       <% end %>
     </tbody>
