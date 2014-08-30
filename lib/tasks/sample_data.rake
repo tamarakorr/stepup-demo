@@ -13,16 +13,12 @@ namespace :db do
     language_list = ["English", "French"]
     remote_status_list = ["Yes", "No", "Both"]
 
-    # users = User.all(limit: 7)
-
     # Create 50 UK users
     Faker::Config.locale = "en-GB"  # Matches Faker repository -> lib/locales
 
     50.times do
-      #name email password passwordconfirmation
       user = createFakeUser()
 
-      #content = Faker::Lorem.sentence(5)
       cause = ["Advocacy & Human Rights", "Children & Youth", "Community",
         "Computers & Technology", "Crisis Support", "Disaster Relief",
         "Education & Literacy", "Emergency & Safety", "Health & Medicine",
