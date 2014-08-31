@@ -2,11 +2,15 @@
 
 $dark_blue_gray: #2b3e50;
 
+body, .boxes-select, .pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus, .pagination > li > a {
+  background-color: black;
+}
+
 // Navbar ----------------------------------------------
 .navbar {
   // (Superhero theme has transparent navbar by default.
   // Weird when scrolling down. Make non-transparent.)
-  background-color: $dark_blue_gray;
+  background-color: black;
 
   height: 65px;
 
