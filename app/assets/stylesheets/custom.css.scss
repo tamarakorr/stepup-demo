@@ -1,17 +1,50 @@
 @import "bootstrap.min";
 
+$paler_orange: #f1a952;
+$pale_yellow: #f0f58c;
+$pale_blue: #5199f1;
+$analog_red: #f15951;
+$pale_green: #99f151;
+$purple: #a851f1;
+$yellow: #FFD871;
+
+body {
+  background-color: $yellow;
+}
+.btn-primary {
+  background-color: $analog_red; 
+}
+.btn-primary:hover {
+  background-color: $pale_blue;
+}
+#btnMoreInfo {
+  background-color: $pale_blue;
+}
+.front-page-button-container {
+  background-color: $yellow;
+}
+
+.list-group-item {
+  background-color: $paler_orange;
+}
+.list-group-item.active {
+    background-color: $analog_red;
+}
+
 // Navbar ----------------------------------------------
 .navbar {
   // (Superhero theme has transparent navbar by default.
   // Weird when scrolling down. Make non-transparent.)
-  background-color: #2b3e50;
+  background-color: $paler_orange; //#2b3e50;
 
   height: 65px;
 
   a {
+    color: white;
     font-size: 18px;
     margin-top: 10px;
     font-weight: bold;
+    text-transform: uppercase;
   }
 
   .container {
@@ -22,8 +55,8 @@
   .navbar-brand {
     padding-top: 0;
     margin-top: 5px;
-    font-size: 42px;
-    font-weight: lighter;
+    //font-size: 42px;
+    //font-weight: lighter;
   }
 
   // Align menu images
@@ -38,8 +71,8 @@
   }
   .navbar-right {
     .dropdown-toggle {
-      margin-top: 19px;
-      float: right;
+      //margin-top: 19px;
+      //float: right;
     }
   }
 

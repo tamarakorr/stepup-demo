@@ -27,7 +27,7 @@
        <li class="list-group-item small">3 Row3</li>
     </ul>
 
-    <div class="container" style="padding-top:60px;">
+    <div class="container front-page-button-container" style="padding-top:60px;">
       <div class="row">
         <!--Browse Vacancies-->
         <div class="col-md-4">
@@ -39,7 +39,7 @@
        </div>
        <!--More Info-->
         <div class="col-md-4">
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">More Info</a></p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button" id="btnMoreInfo">More Info</a></p>
         </div>
       </div>
 
@@ -65,7 +65,14 @@
       zoom: 3,
       center: new google.maps.LatLng(51.5072, 0.1275),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles: [{"elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road","stylers":[{"visibility":"off"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#004b76"}]},{"featureType":"landscape.natural","stylers":[{"visibility":"on"},{"color":"#fff6cb"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"off"},{"color":"#7f7d7a"},{"lightness":10},{"weight":1}]}]
+      //styles: [{"elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road","stylers":[{"visibility":"off"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#004b76"}]},{"featureType":"landscape.natural","stylers":[{"visibility":"on"},{"color":"#fff6cb"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"off"},{"color":"#7f7d7a"},{"lightness":10},{"weight":1}]}]
+      styles: [{
+    featureType: "all",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  },{"featureType":"water","stylers":[{"color":"#5199f1"},{"visibility":"on"}]},{"featureType":"landscape","stylers":[{"color":"#f2f2f2"}]},{"featureType":"road","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]}]
       };
 
       var map = new google.maps.Map(document.getElementById('map'), myOptions);
