@@ -1,14 +1,20 @@
 @import "bootstrap.min";
 
-$dark_blue_gray: #2b3e50;
+$light_red: #f15951;
+$pale_orange: #f1a952;
+$boot_blue: #2A6496;
 
 // Navbar ----------------------------------------------
 .navbar {
-  // (Superhero theme has transparent navbar by default.
-  // Weird when scrolling down. Make non-transparent.)
-  background-color: $dark_blue_gray;
+  // Make Bootstrap default navbar non-transparent.
+  background-color: white;
 
   height: 65px;
+
+  opacity: 0.95;
+
+  box-shadow: 0px 0px 2px gray;
+  border-bottom: 1px solid gray;
 
   a {
     font-size: 18px;
@@ -24,9 +30,9 @@ $dark_blue_gray: #2b3e50;
   }
   .navbar-brand {
     padding-top: 0;
-    margin-top: 5px;
+    margin-top: 1px;
     font-size: 22px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
   }
 
   // Align menu images
@@ -38,14 +44,6 @@ $dark_blue_gray: #2b3e50;
     font-size: 50px;
     margin-top: 10px;
     margin-right: -15px;
-  }
-
-  .dropdown-menu {
-    li {
-      a {
-        font-size: 16px;
-      }
-    }
   }
 }
 
@@ -179,12 +177,13 @@ input {
   @extend .has-error !optional;
 }
 
-// Tables ---------------------------------------------
+/*// Tables ---------------------------------------------
 .table {
   font-size: 16px;
 }
 .table thead > tr > th { border-bottom: 1px solid #bebebe; }
 .table tbody > tr > td { border-bottom: 1px solid #717171; }
+*/
 
 // Triangles to show sort order -----------------------
 th .asc:after {
@@ -223,7 +222,7 @@ div[class*='boxes-select'] {
   height: 120px;
 }
 .boxes-select-label {
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 5px;
 }
 #inlineCheckbox {

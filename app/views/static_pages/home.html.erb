@@ -19,15 +19,15 @@
 
     <!-- Top Vacancies-->
     <!-- TODO Needs refactored (to external process) -->
-    <ul class="list-group pull-left top-vacancies" style="position: absolute; top: 120px; right: 100px;">
-       <a href="#" class="list-group-item active">
-         Top Vacancies
-       </a>
-       <% top_vacs = Vacancy.select("service, count(*) as vac_count").where("is_active").group("service").order("vac_count DESC").limit(3).to_a %>
-       <% top_vacs.each.with_index(1) do |vac, index| %>
-        <li class="list-group-item small"><%= index.to_s + "   " + vac.service + " (" + vac.vac_count.to_s + ")" %></li>
-       <% end %>
-    </ul>
+    <% top_vacs = Vacancy.select("service, count(*) as vac_count").where("is_active").group("service").order("vac_count DESC").limit(3).to_a %>
+    <% unless top_vacs.empty? %>
+      <ul class="list-group pull-left top-vacancies" style="position: absolute; top: 120px; right: 100px;">
+         <a href="#" class="list-group-item active">Top Vacancies</a>
+         <% top_vacs.each.with_index(1) do |vac, index| %>
+          <li class="list-group-item small"><%= index.to_s + "   " + vac.service + " (" + vac.vac_count.to_s + ")" %></li>
+         <% end %>
+      </ul>
+    <% end %>
 
     <div class="container" style="padding-top:60px;">
       <div class="row">
@@ -68,7 +68,7 @@
       zoom: 3,
       center: new google.maps.LatLng(51.5072, 0.1275),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles: [{"elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road","stylers":[{"visibility":"off"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#004b76"}]},{"featureType":"landscape.natural","stylers":[{"visibility":"on"},{"color":"#fff6cb"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"off"},{"color":"#7f7d7a"},{"lightness":10},{"weight":1}]}]
+      styles: [{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbbbbb"},{"saturation":-100},{"lightness":26},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#dddddd"},{"saturation":-100},{"lightness":-3},{"visibility":"on"}]}]
       };
 
       var map = new google.maps.Map(document.getElementById('map'), myOptions);
