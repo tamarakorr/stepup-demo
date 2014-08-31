@@ -1,17 +1,20 @@
 @import "bootstrap.min";
 
+$dark_blue_gray: #2b3e50;
+
 // Navbar ----------------------------------------------
 .navbar {
   // (Superhero theme has transparent navbar by default.
   // Weird when scrolling down. Make non-transparent.)
-  background-color: #2b3e50;
+  background-color: $dark_blue_gray;
 
   height: 65px;
 
   a {
     font-size: 18px;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: normal;
+    //text-transform: uppercase;
   }
 
   .container {
@@ -22,8 +25,8 @@
   .navbar-brand {
     padding-top: 0;
     margin-top: 5px;
-    font-size: 42px;
-    font-weight: lighter;
+    font-size: 22px;
+    text-transform: uppercase;
   }
 
   // Align menu images
@@ -44,6 +47,12 @@
       }
     }
   }
+}
+
+// Top vacancies list ----------------------------------
+.top-vacancies {
+  font-size: 15px;
+  opacity: 0.9;
 }
 
 // NGO Profile -----------------------------------------

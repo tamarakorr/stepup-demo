@@ -19,8 +19,8 @@
 
     <!-- Top Vacancies-->
     <!-- TODO Needs refactored (to external process) -->
-    <ul class="list-group pull-left small" style="position: absolute; top: 120px; right: 100px;">
-       <a href="#" class="list-group-item active small">
+    <ul class="list-group pull-left top-vacancies" style="position: absolute; top: 120px; right: 100px;">
+       <a href="#" class="list-group-item active">
          Top Vacancies
        </a>
        <% top_vacs = Vacancy.select("service, count(*) as vac_count").where("is_active").group("service").order("vac_count DESC").limit(3).to_a %>
