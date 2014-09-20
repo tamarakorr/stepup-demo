@@ -1,5 +1,6 @@
-# StepUp Demo: 24 August 2014
-Last reviewed: 20 September 2014
+# StepUp Demo
+Created 24 August 2014
+Last reviewed 20 September 2014
 
 This is the [*StepUp Demo*](http://www.example.com)
 by [Tammy Orr, Ivan Mani, and Charlotte Fisher](http://www.endsvchack.com/projects/stepup).
@@ -50,12 +51,12 @@ and then of course:
 (git add ., git commit, git push (--all), git push (-f) heroku branch-name:master)  
 ```
 
-Obviously this makes a mess in git - so please do it as its own separate commit (i.e. `git commit -am 'Precompile assets for Heroku'`).
+This of course makes a mess in git. So please do it as its own separate commit (i.e. `git commit -am 'Precompile assets for Heroku'`).
 
 ### Design issues
 * Most input fields are unrestricted string fields without constraints
 * Many input fields should be dropdowns  
-  We do not have finalized option lists for them
+  We do not have finalized option lists for them  
   Bootstrap dropdown boxes look awful (perhaps not a worry for demo)
 
 ### Known Sloppiness  
@@ -100,7 +101,7 @@ The following actions will lead to the login/registration page:
 This user may:  
 
 * Do everything an Unregistered User can do  
-* Create their volunteer, NGO, or corporate profile  
+* Create own volunteer, NGO, or corporate profile  
 * Check messages  
 * Sign out  
 
@@ -111,16 +112,16 @@ This user may:
 
 * Do everything a generic registered user can do
 * Make a vacancy proposal (not implemented)  
-* Edit their profile  
-* List their profile  
-* Unlist their profile  
+* Edit own profile  
+* List own profile  
+* Unlist own profile  
 
 ### Signed-in NGO
 This user may:  
 
 * Do everything a generic registered user can do
 * Browse volunteers  
-* Edit their profile  
+* Edit own profile  
 * View own vacancies  
 * Post a vacancy  
 * Edit own vacancy  
