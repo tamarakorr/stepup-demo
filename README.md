@@ -1,5 +1,5 @@
 # StepUp Demo
-Created 24 August 2014
+Created 24 August 2014  
 Last reviewed 20 September 2014
 
 This is the [*StepUp Demo*](http://www.example.com)
