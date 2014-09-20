@@ -1,5 +1,5 @@
 class VacanciesController < ApplicationController
-  before_action :signed_in_user  #, only: [:create, :destroy]
+  before_action :signed_in_user, only: [:create, :destroy]
   #before_action :ngo_user, only: [:new]
   helper_method :sort_column, :sort_direction
 
