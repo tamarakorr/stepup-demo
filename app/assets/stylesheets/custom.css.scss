@@ -9,7 +9,7 @@ $boot_blue: #2A6496;
   // Make Bootstrap default navbar non-transparent.
   background-color: white;
 
-  height: 65px;
+  height: 58px; //65px
 
   opacity: 0.95;
 
@@ -18,7 +18,7 @@ $boot_blue: #2A6496;
 
   a {
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 4px;
     font-weight: normal;
     //text-transform: uppercase;
   }
@@ -45,6 +45,13 @@ $boot_blue: #2A6496;
     margin-top: 10px;
     margin-right: -15px;
   }
+}
+
+// Map -------------------------------------------------
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: -16px;
 }
 
 // Top vacancies list ----------------------------------
