@@ -8,4 +8,11 @@ class Ngo < ActiveRecord::Base
   validates :contact_phone, presence: true
 
   has_many :vacancy, dependent: :destroy         # Zero or more
+
+  def self.sortable_by(field_name)
+    # TODO duplication of this code is possible in all models. 
+    #   Should keep it in common place
+    return false if field_name.nil?
+    return true if column_names.include?(field_name)
+  end
 end

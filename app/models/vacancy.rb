@@ -34,9 +34,12 @@ class Vacancy < ActiveRecord::Base
   #end
 
   def self.sortable_by?(field_name)
+    # TODO Cover this in rspec
     return false if field_name.nil?
     return true if column_names.include?(field_name)
-    return true if field_name == 'ngos.name'
+    # In case of sorting on NGO's fields, the field will contain 'ngo.' appended to it.    
+    #   e.g: 'ngo.name'. So remove that and send to NGO model.
+    return true if Ngo.sortable_by?(field_name.split('.').last) 
   end
 
 end
