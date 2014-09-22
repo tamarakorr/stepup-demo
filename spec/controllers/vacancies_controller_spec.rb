@@ -17,7 +17,7 @@ describe VacanciesController do
     ]}
 
     context "when there are no sort parameters" do
-      it 'should get a list of all the vacancies in a instance variable sorted asc with `service` and render the view.' do
+      it 'should fetch all vacancies into a instance variable sorted asc with `service`' do
         get 'index'
         response.should be_success
         assigns(:vacancies).count.should be_eql(4)
@@ -27,7 +27,7 @@ describe VacanciesController do
     end
 
     context "when there are sort paraments" do
-      it "should fetch vacancies within the specified sort orders" do
+      it "should fetch vacancies within the specified sort orders into a instance variable" do
         get 'index', 
             :sort => 'work_region',
             :direction => 'desc'
