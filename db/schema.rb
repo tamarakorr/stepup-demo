@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 20140827150654) do
   add_index "ngos", ["name"], name: "index_ngos_on_name", using: :btree
   add_index "ngos", ["user_id"], name: "index_ngos_on_user_id", using: :btree
 
-  create_table "reportmap", id: false, force: true do |t|
-    t.string  "work_region"
-    t.integer "num",         limit: 8
-  end
-
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
