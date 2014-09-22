@@ -33,4 +33,10 @@ class Vacancy < ActiveRecord::Base
   #  self.work_region
   #end
 
+  def self.sortable_by?(field_name)
+    return false if field_name.nil?
+    return true if column_names.include?(field_name)
+    return true if field_name == 'ngos.name'
+  end
+
 end

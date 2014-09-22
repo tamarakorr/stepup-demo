@@ -39,7 +39,7 @@ class VacanciesController < ApplicationController
 
     def sort_column
       # Sort by service if nothing specified
-      Vacancy.column_names.include?(params[:sort]) || params[:sort] == 'ngos.name' ? params[:sort] : "service"
+      Vacancy.sortable_by?(params[:sort]) ? params[:sort] : "service"
     end
     
     def sort_direction
