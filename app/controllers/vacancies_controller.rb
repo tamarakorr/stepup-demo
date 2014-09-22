@@ -47,7 +47,7 @@ class VacanciesController < ApplicationController
     end
 
     def sort
-      Vacancy.joins(:ngo).order(sort_column + " " + sort_direction).paginate(page: params[:page],
+      Vacancy.eager_load(:ngo).order(sort_column + " " + sort_direction).paginate(page: params[:page],
         per_page: 10)
     end
 end
