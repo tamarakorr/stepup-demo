@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :vacancy do
-    ngo_id 1
+    ngo { FactoryGirl.create(:ngo) }
     service "MyString"
     skill "MyString"
     work_region "MyString"

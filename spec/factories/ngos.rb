@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :ngo do
-    user_id 1
+    user { FactoryGirl.create(:user) }
     name "MyString"
     contact_city "MyString"
     contact_country "MyString"

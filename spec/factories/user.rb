@@ -1,7 +1,16 @@
 FactoryGirl.define do
+
+  sequence :user_email do |n|
+    # A sequence will keep a temporary count of the call made to the 
+    #  factory. We can use the count to create dynamic unique values.
+    #     e.g, email1@yahoo.com, email2@gmail.com etc.,
+    domain = ['yahoo', 'gmail', 'rediffmail'].sample
+    "email#{n}@#{domain}.com"
+  end
+
   factory :user do
     name     "Rapunzel"
-    email    "rapunzel@example.com"
+    email    { FactoryGirl.generate(:user_email) }
     password "foobar"
     password_confirmation "foobar"
   end
