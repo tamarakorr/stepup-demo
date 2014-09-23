@@ -7,19 +7,22 @@
     <%= render 'shared/make_filter_group',
         outer_class: "boxes-select boxes-select-short well",
         groups: Vacancy.pluck('DISTINCT work_region').sort!,
-        input_field_name: 'work_region[]' %>
+        input_field_name: 'filters[work_region][]',
+        checked_values: (params["filters"]["work_region"] rescue []) %>
 
     <h3>Service</h3>
     <%= render 'shared/make_filter_group',
         outer_class: "boxes-select boxes-select-short well",
         groups: Volunteer.pluck('DISTINCT service').sort!,
-        input_field_name: 'service[]' %>
+        input_field_name: 'filters[service][]',
+        checked_values: (params["filters"]["service"] rescue []) %>
 
     <h3>NGO</h3>
     <%= render 'shared/make_filter_group',
         outer_class: "boxes-select boxes-select-short well",
         groups: Vacancy.joins(:ngo).pluck('DISTINCT name').sort!,
-        input_field_name: 'name[]' %>
+        input_field_name: 'filters[ngos.name][]',
+        checked_values: (params["filters"]["ngos.name"] rescue []) %>
 
     <%= submit_tag(value = "Apply", { class: "btn btn-large btn-primary" }) %>
     <!-- <button class="btn btn-large btn-primary">Apply</button>   -->
@@ -27,7 +30,14 @@
 </div>
 
 <div class="col-xs-9">
-  <h3><%= @vacancies.count %> vacancies found</h3>
+  <h3>
+    <%= @vacancies.count %> vacancies found
+    <% if params['filters'].present? %>
+      <small>
+        <%= link_to "Clear filters", vacancies_path %>
+      </small>
+    <% end %>
+  </h3>
   <table class="table table-hover vacancies">
     <thead>
       <tr>

@@ -1,5 +1,10 @@
 <!-- Render checkbox with given text-->
+
+<% should_select = (checked_values.present? and checked_values.include?(text)) %>
+
 <label class="checkbox">
-  <input type="checkbox" id="inlineCheckbox" value='<%= text %>' name='<%= input_field_name %>'>
+  <input type="checkbox" id="inlineCheckbox"
+        value='<%= text %>' name='<%= input_field_name %>'
+        <%= should_select ? "checked" : "" %> >
   <span class="boxes-select-label"> <%= text %> </span>
 </label>
