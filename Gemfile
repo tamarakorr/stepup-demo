@@ -19,6 +19,7 @@ gem 'countries'                           # See https://github.com/hexorx/countr
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'factory_girl_rails', '4.2.0'
+  gem 'debugger'
 end
 
 group :test do
