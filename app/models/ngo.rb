@@ -9,7 +9,7 @@ class Ngo < ActiveRecord::Base
 
   has_many :vacancy, dependent: :destroy         # Zero or more
 
-  def self.sortable_by(field_name)
+  def self.sortable_by?(field_name)
     # TODO duplication of this code is possible in all models. 
     #   Should keep it in common place
     return false if field_name.nil?
