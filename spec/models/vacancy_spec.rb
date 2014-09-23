@@ -43,7 +43,7 @@ describe Vacancy do
 
     context "when no filters are passed" do
       it "should return all records" do
-        results = Vacancy.filter
+        results = Vacancy.filtered_by
         results.count.should be_eql(vacancies.size)
       end
     end
@@ -51,14 +51,14 @@ describe Vacancy do
     context "work_region filter" do
       context "when the filter is empty" do
         it "should return all records" do
-          results = Vacancy.filter({ :work_region => [] })
+          results = Vacancy.filtered_by({ :work_region => [] })
           results.count.should be_eql(vacancies.size)
         end
       end
 
       context 'when the filter is NOT empty' do
         it "should return matching records" do
-          results = Vacancy.filter({
+          results = Vacancy.filtered_by({
             :work_region => [
               "India",
               "UK"
@@ -72,14 +72,14 @@ describe Vacancy do
     context "service filter" do
       context "when the filter is empty" do
         it "should return all records" do
-          results = Vacancy.filter({ :service => [] })
+          results = Vacancy.filtered_by({ :service => [] })
           results.count.should be_eql(vacancies.size)
         end
       end
 
       context 'when the filter is NOT empty' do
         it "should return matching records" do
-          results = Vacancy.filter({
+          results = Vacancy.filtered_by({
             :service => [
               "Service 1",
               "Service 2"
@@ -95,14 +95,14 @@ describe Vacancy do
     context "ngos.name filter" do
       context "when the filter is empty" do
         it "should return all records" do
-          results = Vacancy.filter({ "ngos.name" => [] })
+          results = Vacancy.filtered_by({ "ngos.name" => [] })
           results.count.should be_eql(vacancies.size)
         end
       end
 
       context 'when the filter is NOT empty' do
         it "should return matching records" do
-          results = Vacancy.filter({
+          results = Vacancy.filtered_by({
             "ngos.name" => [
               "ngo 2",
               "ngo 3"
@@ -117,7 +117,7 @@ describe Vacancy do
 
     context "when multiple filters are passed togethter" do
       it "should return the matching records" do
-        results = Vacancy.filter({
+        results = Vacancy.filtered_by({
           :service => [
             "Service 1",
             "Service 2"

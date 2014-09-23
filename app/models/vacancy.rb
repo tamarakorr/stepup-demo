@@ -42,7 +42,7 @@ class Vacancy < ActiveRecord::Base
     return true if Ngo.sortable_by?(field_name.split('.').last) 
   end
 
-  def self.filter(filters = {})
+  def self.filtered_by(filters = {})
     records = Vacancy.eager_load(:ngo)
     filters.stringify_keys!
     
