@@ -41,3 +41,5 @@ end
 group :production do
   gem 'rails_12factor', '0.0.2'
 end
+
+gem 'awesome_print'
