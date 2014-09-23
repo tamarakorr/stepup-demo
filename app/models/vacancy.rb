@@ -42,9 +42,11 @@ class Vacancy < ActiveRecord::Base
     return true if Ngo.sortable_by?(field_name.split('.').last) 
   end
 
-  def self.filtered_by(filters = {})
-    records = Vacancy.eager_load(:ngo)
+  def self.filtered_by(filters = {})    
+    filters ||= {}
     filters.stringify_keys!
+    
+    records = Vacancy.eager_load(:ngo)
     
     if filters['work_region'].present?
       records = records.where("vacancies.work_region in (?)", filters['work_region'])

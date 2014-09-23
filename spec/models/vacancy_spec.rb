@@ -135,5 +135,12 @@ describe Vacancy do
         results.pluck(:id).should =~ [vacancies[1].id]
       end
     end
+
+    context "when filters argument is passed as nil" do
+      it "should return all records" do
+        results = Vacancy.filtered_by({ "ngos.name" => [] })
+        results.count.should be_eql(vacancies.size)
+      end
+    end
   end
 end
