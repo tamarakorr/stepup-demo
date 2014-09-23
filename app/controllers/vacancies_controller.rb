@@ -1,6 +1,7 @@
 class VacanciesController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy]
   #before_action :ngo_user, only: [:new]
+  before_action :redirect_if_not_signed_in, only: [:new]
   helper_method :sort_column, :sort_direction
 
   def index

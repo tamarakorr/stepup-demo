@@ -69,4 +69,14 @@ describe VacanciesController do
       end
     end
   end
+
+  describe "GET 'new" do
+    context 'when user is not signed in' do
+      it "should redirect to sign in page with a flash message." do
+        get 'new'
+        response.should redirect_to(signin_path)        
+        flash[:info] = I18n.t('user.signin_required')
+      end   
+    end
+  end
 end
