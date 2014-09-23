@@ -6,7 +6,7 @@
   <div class="control-group">
     <div class="controls span6">
       <% groups.each do |group| %>
-        <%= render 'shared/make_checkbox', text: raw('<span class="boxes-select-label">') + group + raw('</span>') %>
+        <%= render 'shared/make_checkbox', text: group, input_field_name: input_field_name %>
       <% end %>
     </div><!-- /controls -->
   </div><!-- /control-group -->

@@ -1,23 +1,29 @@
 <!-- Vacancies index-->
 <div class="col-xs-3">
-  <h3>Filter Results</h3>
+  <form action='/vacancies' method='get'>
+    <h3>Filter Results</h3>
 
-  <h3>Work Region</h3>
-  <%= render 'shared/make_filter_group',
-      outer_class: "boxes-select boxes-select-short well",
-      groups: Vacancy.pluck('DISTINCT work_region').sort! %>
+    <h3>Work Region</h3>
+    <%= render 'shared/make_filter_group',
+        outer_class: "boxes-select boxes-select-short well",
+        groups: Vacancy.pluck('DISTINCT work_region').sort!,
+        input_field_name: 'work_region[]' %>
 
-  <h3>Service</h3>
-  <%= render 'shared/make_filter_group',
-      outer_class: "boxes-select boxes-select-short well",
-      groups: Volunteer.pluck('DISTINCT service').sort! %>
+    <h3>Service</h3>
+    <%= render 'shared/make_filter_group',
+        outer_class: "boxes-select boxes-select-short well",
+        groups: Volunteer.pluck('DISTINCT service').sort!,
+        input_field_name: 'service[]' %>
 
-  <h3>NGO</h3>
-  <%= render 'shared/make_filter_group',
-      outer_class: "boxes-select boxes-select-short well",
-      groups: Vacancy.joins(:ngo).pluck('DISTINCT name').sort! %>
+    <h3>NGO</h3>
+    <%= render 'shared/make_filter_group',
+        outer_class: "boxes-select boxes-select-short well",
+        groups: Vacancy.joins(:ngo).pluck('DISTINCT name').sort!,
+        input_field_name: 'name[]' %>
 
-  <button class="btn btn-large btn-primary">Apply</button>  
+    <%= submit_tag(value = "Apply", { class: "btn btn-large btn-primary" }) %>
+    <!-- <button class="btn btn-large btn-primary">Apply</button>   -->
+  </form>
 </div>
 
 <div class="col-xs-9">
