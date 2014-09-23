@@ -5,15 +5,21 @@
     <h3>Service</h3>
     <%= render 'shared/make_filter_group',
       outer_class: "boxes-select boxes-select-medium well",
-      groups: Volunteer.pluck('DISTINCT service').sort! %>
+      groups: Volunteer.pluck('DISTINCT service').sort!,
+      input_field_name: 'filters[service][]',
+      checked_values: (params["filters"]["service"] rescue []) %>
     <h3>Cause</h3>
     <%= render 'shared/make_filter_group',
       outer_class: "boxes-select boxes-select-short well",
-      groups: Volunteer.pluck('DISTINCT cause').sort! %>
+      groups: Volunteer.pluck('DISTINCT cause').sort!,
+      input_field_name: 'filters[cause][]',
+      checked_values: (params["filters"]["cause"] rescue []) %>
     <h3>Region</h3>
     <%= render 'shared/make_filter_group',
       outer_class: "boxes-select boxes-select-short well",
-      groups: Volunteer.pluck('DISTINCT work_region').sort! %>
+      groups: Volunteer.pluck('DISTINCT work_region').sort!,
+      input_field_name: 'filters[work_region][]',
+      checked_values: (params["filters"]["work_region"] rescue []) %>
   <% end %>
 
   <button class="btn btn-large btn-primary">Apply</button>  
