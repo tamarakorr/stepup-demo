@@ -42,13 +42,13 @@
     <thead>
       <tr>
         <th>#</th>
-        <th><%= sortable "title", "Title" %></th>
+        <th><%= sortable "title", "Title", { :filters => params['filters'] } %></th>
         <!-- NGO name not easily sortable in different table w/ Rails :( -->
-        <th><%= sortable "ngos.name", "NGO" %></th>
-        <th><%= sortable "work_region", "Work Region" %></th>
-        <th><%= sortable "service", "Service" %></th>
-        <th><%= sortable "remote_status", "Remote Work?" %></th>
-        <th><%= sortable "when_needed", "When?" %></th>
+        <th><%= sortable "ngos.name", "NGO", { :filters => params['filters'] } %></th>
+        <th><%= sortable "work_region", "Work Region", { :filters => params['filters'] } %></th>
+        <th><%= sortable "service", "Service", { :filters => params['filters'] } %></th>
+        <th><%= sortable "remote_status", "Remote Work?", { :filters => params['filters'] } %></th>
+        <th><%= sortable "when_needed", "When?", { :filters => params['filters'] } %></th>
       </tr>
     </thead>
     <tbody>
