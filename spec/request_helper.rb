@@ -7,7 +7,7 @@ def clean!(tables=false)
   #     Also, this method clears are email deliveries.
 
   tables ||=  %w{
-                  vacancies
+                  vacancies volunteers
                 }
 
   tables.each do |table|
