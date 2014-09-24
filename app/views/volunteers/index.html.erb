@@ -1,7 +1,7 @@
 <div class="col-xs-3">
   <h3>Filter Results</h3>
 
-  <%= form_for(:volunteer, html: {class: "form-horizontal"}) do |f| %>
+  <%= form_for(:volunteer, url: volunteers_path, html: {class: "form-horizontal", method: 'get'}) do |f| %>
     <h3>Service</h3>
     <%= render 'shared/make_filter_group',
       outer_class: "boxes-select boxes-select-medium well",
@@ -20,9 +20,9 @@
       groups: Volunteer.pluck('DISTINCT work_region').sort!,
       input_field_name: 'filters[work_region][]',
       checked_values: (params["filters"]["work_region"] rescue []) %>
-  <% end %>
 
-  <button class="btn btn-large btn-primary">Apply</button>  
+    <%= submit_tag(value = "Apply", { class: "btn btn-large btn-primary" }) %>
+  <% end %>
 </div>
 
 <div class="col-xs-9">
