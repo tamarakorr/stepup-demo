@@ -26,15 +26,22 @@
 </div>
 
 <div class="col-xs-9">
-  <h3><%= pluralize(@volunteers.count, ' volunteers') %> found</h3>
+  <h3>
+    <%= pluralize(@volunteers.count, ' volunteers') %> found
+    <% if params['filters'].present? %>
+      <small>
+        <%= link_to "Clear filters", volunteers_path %>
+      </small>
+    <% end %>
+  </h3>
   <table class="table table-hover volunteers">
     <thead>
       <tr>
         <th>#</th>
-        <th><%= sortable "service", "Service" %></th>
-        <th><%= sortable "remote_status", "Remote Work?" %></th>
-        <th><%= sortable "cause", "Cause" %></th>
-        <th><%= sortable "work_region", "Work Region" %></th>
+        <th><%= sortable "service", "Service", { :filters => params['filters'] } %></th>
+        <th><%= sortable "remote_status", "Remote Work?", { :filters => params['filters'] } %></th>
+        <th><%= sortable "cause", "Cause", { :filters => params['filters'] } %></th>
+        <th><%= sortable "work_region", "Work Region", { :filters => params['filters'] } %></th>
       </tr>
     </thead>
     <tbody>
