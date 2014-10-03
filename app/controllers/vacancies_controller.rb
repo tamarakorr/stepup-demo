@@ -31,6 +31,10 @@ class VacanciesController < ApplicationController
     @vacancy = Vacancy.find(params[:id])
   end
 
+  def new_proposal
+    @vacancy = Vacancy.find(params[:vacancy_id])    
+  end
+
   private
 
     def vacancy_params

@@ -8,7 +8,11 @@ StepupDemo::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :volunteers, only: [:new, :create, :destroy, :index, :show]
   resources :ngos, only: [:new, :create, :destroy]
-  resources :vacancies, only: [:new, :create, :destroy, :index, :show]
+  resources :vacancies, only: [:new, :create, :destroy, :index, :show] do
+    get :new_proposal
+  end
+    
+
   root  'static_pages#home'
   match '/register',to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
