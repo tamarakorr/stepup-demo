@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.label :name, class: "col-sm-3 control-label" %>
-    <%= f.text_field :name, class: "col-sm-5", placeholder: "NGO name for job postings" %>
+    <%= f.text_field :name, class: "col-sm-5", autofocus: "autofocus", placeholder: "NGO name for job postings" %>
   </div>
   <div class="form-group">
     <%= f.label :contact_phone, class: "col-sm-3 control-label" %>

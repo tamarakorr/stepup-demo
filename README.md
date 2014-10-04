@@ -28,7 +28,8 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
   Font for 'Message' textarea doesn't match other text inputs
 * User registration  
   Terms and Conditions checkbox tiny (doesn't match other checkboxes)
-* Placeholders are missing from some screens  
+* Add missing placeholders  
+* Add text autofocus for Volunteer and NGO profile creation
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
