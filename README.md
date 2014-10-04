@@ -16,13 +16,12 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 
 ###New Issues
 * If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page)
-* '1 volunteers' or '1 vacancies' text if filters result in one record - should use pluralize()
-* Google Maps tooltips - mouseout function is commented - why?
+* Google Maps tooltips - mouseout function is commented (why?)
 * 'Make a Proposal' for a vacancy when logged in as an NGO leads to error page
 * Lots of failing tests
 
 ###Tammy's List
-####Changes Complete
+####Completed
 * Update text for Make Proposal/Submit Proposal buttons  
 * Submit Proposal screen  
   Font for 'Message' textarea doesn't match other text inputs
@@ -31,6 +30,7 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Add missing placeholders  
 * Add text autofocus for Volunteer and NGO profile creation
 * Use 'sign in' (two words) consistently
+* '1 volunteers' or '1 vacancies' text if filters result in one record - use pluralize() correctly
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system

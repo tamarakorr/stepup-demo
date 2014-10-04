@@ -27,7 +27,7 @@
 
 <div class="col-xs-9">
   <h3>
-    <%= pluralize(@volunteers.count, ' volunteers') %> found
+    <%= pluralize(@volunteers.count, ' volunteer') %> found
     <% if params['filters'].present? %>
       <small>
         <%= link_to "Clear filters", volunteers_path %>
