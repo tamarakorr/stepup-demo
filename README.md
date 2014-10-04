@@ -19,8 +19,6 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * '1 volunteers' or '1 vacancies' text if filters result in one record - should use pluralize()
 * Google Maps tooltips - mouseout function is commented - why?
 * 'Make a Proposal' for a vacancy when logged in as an NGO leads to error page
-* User registration  
-  Terms and Conditions checkbox tiny (doesn't match other checkboxes)
 * Lots of failing tests
 
 ###Tammy's List
@@ -30,6 +28,8 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Update text for Make Proposal/Submit Proposal buttons  
 * Submit Proposal screen  
   Font for 'Message' textarea doesn't match other text inputs
+* User registration  
+  Terms and Conditions checkbox tiny (doesn't match other checkboxes)
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
