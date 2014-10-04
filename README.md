@@ -10,7 +10,7 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 ###New Issues (4 October 2014)
 * [Minor] If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page).
 * [Minor] 'Make a Proposal' for a vacancy when logged in as a non-volunteer (such as NGO) leads to an error page.
-* [?] (Lots of failing tests?)
+* (Lots of failing tests?)
 
 ###Needed for Demo
 * We own www.stepupvolunteers.com, but it is not configured properly to route to Heroku. 
