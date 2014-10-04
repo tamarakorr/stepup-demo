@@ -27,8 +27,9 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 
 ###Tammy's List
 * Placeholders are missing from some screens (quick job - I will fill in)  
-* Submit Proposal screen  
-  (Fix grammar)
+
+####Done
+* Update text for Make Proposal/Submit Proposal buttons  
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
