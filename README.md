@@ -30,6 +30,7 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
   Terms and Conditions checkbox tiny (doesn't match other checkboxes)
 * Add missing placeholders  
 * Add text autofocus for Volunteer and NGO profile creation
+* Use 'sign in' (two words) consistently
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system

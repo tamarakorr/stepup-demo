@@ -22,4 +22,4 @@
 en:
   hello: "Hello world"
   user:
-    signin_required: "Please signin to proceed."
+    signin_required: "Please sign in to proceed."
