@@ -3,40 +3,40 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.label :cause, class: "col-sm-3 control-label" %>
-    <%= f.text_field :cause, class: "col-sm-4" %>
+    <%= f.text_field :cause, class: "col-sm-5", placeholder: "Example: Human Rights" %>
   </div>
   <div class="form-group">
     <%= f.label :work_region, class: "col-sm-3 control-label" %>
-    <%= f.text_field :work_region, class: "col-sm-4" %>
+    <%= f.text_field :work_region, class: "col-sm-5", placeholder: "The region you want to help" %>
   </div>
   <div class="form-group">
     <%= f.label :service, class: "col-sm-3 control-label" %>
-    <%= f.text_field :service, class: "col-sm-4" %>
+    <%= f.text_field :service, class: "col-sm-5", placeholder: "Example: Counseling" %>
   </div>
   <div class="form-group">
     <%= f.label :skill, class: "col-sm-3 control-label" %>
-    <%= f.text_field :skill, class: "col-sm-4" %>
+    <%= f.text_field :skill, class: "col-sm-5", placeholder: "Example: Children's Counseling" %>
   </div>
   <div class="form-group">
     <%= f.label :availability, class: "col-sm-3 control-label" %>
-    <%= f.text_field :availability, class: "col-sm-4" %>
+    <%= f.text_field :availability, class: "col-sm-5", placeholder: "Example: November 2014" %>
   </div>
   <div class="form-group">
     <%= f.label :remote_status, class: "col-sm-3 control-label" %>
-    <%= f.text_field :remote_status, class: "col-sm-4" %>
+    <%= f.text_field :remote_status, class: "col-sm-5", placeholder: "Yes, No, or Both" %>
   </div>
   <div class="form-group">
     <%= f.label :contact_mobile, class: "col-sm-3 control-label" %>
-    <%= f.text_field :contact_mobile, class: "col-sm-4" %>
+    <%= f.text_field :contact_mobile, class: "col-sm-5", placeholder: "Your mobile number" %>
   </div>
   <div class="form-group">
     <%= f.label :contact_city, class: "col-sm-3 control-label" %>
-    <%= f.text_field :contact_city, class: "col-sm-4" %>
+    <%= f.text_field :contact_city, class: "col-sm-5", placeholder: "Your city" %>
   </div>
   <div class="form-group">
     <%= f.label :contact_country, class: "col-sm-3 control-label" %>
-    <%= f.text_field :contact_country, class: "col-sm-4" %>
+    <%= f.text_field :contact_country, class: "col-sm-5", placeholder: "Your country" %>
   </div>
 
-  <%= f.submit "Create Profile", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Create Profile", class: "btn btn-lg btn-primary col-md-offset-3" %>
 <% end %>

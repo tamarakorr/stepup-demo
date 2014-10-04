@@ -22,14 +22,13 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Lots of failing tests
 
 ###Tammy's List
-* Placeholders are missing from some screens (quick job - I will fill in)  
-
-####Done
+####Changes Complete
 * Update text for Make Proposal/Submit Proposal buttons  
 * Submit Proposal screen  
   Font for 'Message' textarea doesn't match other text inputs
 * User registration  
   Terms and Conditions checkbox tiny (doesn't match other checkboxes)
+* Placeholders are missing from some screens  
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
