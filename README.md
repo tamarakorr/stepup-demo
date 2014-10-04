@@ -14,8 +14,8 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 
 ###New Issues
 * If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page)
-* 'Make a Proposal' for a vacancy when logged in as an NGO leads to error page
-* Lots of failing tests
+* 'Make a Proposal' for a vacancy when logged in as a non-volunteer (such as NGO) leads to error page
+* (Lots of failing tests?)
 
 ###Ivan/Charlotte/Tammy
 * 'More info' static page has not been written yet.  
@@ -30,8 +30,9 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Add missing placeholders  
 * Add text autofocus for Volunteer and NGO profile creation
 * Use 'sign in' (two words) consistently
-* '1 volunteers' or '1 vacancies' text if filters result in one record - use pluralize() correctly
-* Google Maps tooltips - Support both mouseover/mouseout and click events
+* When filters result in one record - '1 volunteers' or '1 vacancies' text - use pluralize() correctly
+* Google Maps tooltips - Support both mouseover/mouseout and click events  
+  Note: Google Maps does not pass a close() event, causing minor bug when hovering after infowindow has been clicked and closed once.
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
@@ -51,9 +52,6 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
   Vacancies can now be sorted by NGO  
 * Hovering on a map label now shows more info (& larger font)  
 * 'Post Vacancy' bug is fixed  
-
-## Developer notes
-
 
 ### Design issues
 * Most input fields are unrestricted string fields without constraints
