@@ -89,20 +89,26 @@
 
           marker['infowindow'] = new google.maps.InfoWindow({
             content: desc_content,
-            maxWidth: 250
+            maxWidth: 250,
+            ignoreMouseout: false
           });
 
           google.maps.event.addListener(marker, 'mouseover', function() {
             this['infowindow'].open(map, this);
           });
 
+          // Ignore mouseout (close()) if user clicks
           google.maps.event.addListener(marker, 'click', function() {
             this['infowindow'].open(map, this);
+            this['infowindow'].ignoreMouseout = true;
           });
 
-          // google.maps.event.addListener(marker, 'mouseout', function() {
-          //   this['infowindow'].close();
-          // });
+          google.maps.event.addListener(marker, 'mouseout', function() {
+            if (! this['infowindow'].ignoreMouseout) {
+              this['infowindow'].close();
+              this['infowindow'].ignoreMouseout = false;
+            }
+          });
 
         <% end %>
       <% end %>

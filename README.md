@@ -8,17 +8,17 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 
 ## Unimplemented Functionality
 ###Needed for Demo
-
-* Messaging system (proposals) (partially implemented)  
-* We own www.stepupvolunteers.com, but it is not configured properly to route to Heroku.
-* 'More info' static page has not been written yet.  
+* We own www.stepupvolunteers.com, but it is not configured properly to route to Heroku. 
 * 'Post Skill' menu item does nothing.  
+* Messaging system (proposals) (partially implemented)  
 
 ###New Issues
 * If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page)
-* Google Maps tooltips - mouseout function is commented (why?)
 * 'Make a Proposal' for a vacancy when logged in as an NGO leads to error page
 * Lots of failing tests
+
+###Ivan/Charlotte/Tammy
+* 'More info' static page has not been written yet.  
 
 ###Tammy's List
 ####Completed
@@ -31,6 +31,7 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Add text autofocus for Volunteer and NGO profile creation
 * Use 'sign in' (two words) consistently
 * '1 volunteers' or '1 vacancies' text if filters result in one record - use pluralize() correctly
+* Google Maps tooltips - Support both mouseover/mouseout and click events
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
