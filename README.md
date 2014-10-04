@@ -3,38 +3,25 @@ Created 24 August 2014
 Last reviewed 4 October 2014
 
 This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)  
-  designed by [Tammy Orr, Ivan Mani, and Charlotte Fisher](http://www.endsvchack.com/projects/stepup),  
-  coded by Tammy Orr and Sri Vishnu Totakura.
+  Designed by [Tammy Orr, Ivan Mani, and Charlotte Fisher](http://www.endsvchack.com/projects/stepup)  
+  Coded by Tammy Orr and Sri Vishnu Totakura.
 
 ## Unimplemented Functionality
+###New Issues (4 October 2014)
+* [Minor] If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page).
+* [Minor] 'Make a Proposal' for a vacancy when logged in as a non-volunteer (such as NGO) leads to an error page.
+* [?] (Lots of failing tests?)
+
 ###Needed for Demo
 * We own www.stepupvolunteers.com, but it is not configured properly to route to Heroku. 
 * 'Post Skill' menu item does nothing.  
 * Messaging system (proposals) (partially implemented)  
 
-###New Issues
-* If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page)
-* 'Make a Proposal' for a vacancy when logged in as a non-volunteer (such as NGO) leads to error page
-* (Lots of failing tests?)
-
 ###Ivan/Charlotte/Tammy
 * 'More info' static page has not been written yet.  
 
-###Tammy's List
-####Completed
-* Update text for Make Proposal/Submit Proposal buttons  
-* Submit Proposal screen  
-  Font for 'Message' textarea doesn't match other text inputs
-* User registration  
-  Terms and Conditions checkbox tiny (doesn't match other checkboxes)
-* Add missing placeholders  
-* Add text autofocus for Volunteer and NGO profile creation
-* Use 'sign in' (two words) consistently
-* When filters result in one record - '1 volunteers' or '1 vacancies' text - use pluralize() correctly
-* Google Maps tooltips - Support both mouseover/mouseout and click events  
-  Note: Google Maps does not pass a close() event, causing minor bug when hovering after infowindow has been clicked and closed once.
-
 ###Not needed for demo (?)
+* Minor bug:  Only occurs after infowindow has been clicked and closed once. Infowindow sticks open until 'X' is clicked when hovering. (Due to Google Maps API - no close() event for infowindow.)
 * Corporate reporting/analytics system
 * 'Sign in with LinkedIn' unimplemented  
 * Clicking a 'Top Vacancy' on Home page should probably lead to those vacancies  
@@ -42,17 +29,9 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Corporate profiles  
 * Map labels do not group when many labels are in a small area (plugins to do this quickly are expensive)  
 * Terms and conditions have not been written
-* Hovering on map labels - consider tablet/mobile view (no hover) (probably not needed for demo)  
 * Browse volunteers and browse vacancies - lists should look much better when graphics are added  
 
 ## Implemented
-* 'I have read these Terms and Conditions...' checkbox must be checked to register  
-* Browse volunteers and browse vacancies:  
-  Filter -> 'Apply' buttons work  
-  Vacancies can now be sorted by NGO  
-* Hovering on a map label now shows more info (& larger font)  
-* 'Post Vacancy' bug is fixed  
-
 ### Design issues
 * Most input fields are unrestricted string fields without constraints
 * Many input fields should be dropdowns  
@@ -63,6 +42,25 @@ This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)
 * Some lazy `'style='` HTML tags remain in static_pages/home.html.erb  
 * There may be some "TODO"s in the code  
 * Some code which might be useful later is commented  
+
+###Vishnu - Completed
+* 'I have read these Terms and Conditions...' checkbox must be checked to register  
+* Browse volunteers and browse vacancies:  
+  Filter -> 'Apply' buttons work  
+  Vacancies can now be sorted by NGO  
+* Hovering on a map label now shows more info (& larger font)  
+* 'Post Vacancy' bug is fixed  
+
+###Tammy - Completed
+* Added missing placeholders  
+* Updated text for Make Proposal/Submit Proposal buttons  
+* Submit Proposal screen - fixed 'Message' textarea font
+* User registration - fixed small Terms and Conditions checkbox
+* Added text autofocus for Volunteer and NGO profile creation
+* Ensured 'sign in' (two words) used consistently
+* Fix use of pluralize() - when filters result in one record - '1 volunteers' or '1 vacancies' text
+* Google Maps tooltips - Added support for both mouseover/mouseout and click events  
+  Note: see minor bug above under 'Not Needed for Demo'
 
 ## Messaging System
 ###Notes  
