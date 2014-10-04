@@ -1,29 +1,34 @@
 # StepUp Demo
 Created 24 August 2014  
-Last reviewed 20 September 2014
+Last reviewed 4 October 2014
 
-This is the [*StepUp Demo*](http://www.example.com)
-by [Tammy Orr, Ivan Mani, and Charlotte Fisher](http://www.endsvchack.com/projects/stepup).
+This is the [*StepUp Demo*](https://stepup-demo.herokuapp.com)  
+  designed by [Tammy Orr, Ivan Mani, and Charlotte Fisher](http://www.endsvchack.com/projects/stepup),  
+  coded by Tammy Orr and Sri Vishnu Totakura.
 
 ## Unimplemented Functionality
 ###Needed for Demo
 
-* Messaging system (proposals)  
-* We own www.stepupvolunteers.com, but it is not configured properly to route to Heroku
-* 'I have read these Terms and Conditions...' checkbox is ignored on registration page  
-* Browse volunteers and browse vacancies:  
-  Filter -> 'Apply' button does not yet do anything  
-  (Lists will look much better when graphics are added)  
-* Hovering on a map label should show more info (& larger font)  
-  Consider tablet/mobile view (no hover) (probably not needed for demo)  
-* Vacancies cannot currently be sorted by NGO  
-  (I couldn't quickly determine the best-practice way to do it in Rails)  
-* 'More info' static page has not been written yet  
-* 'Post Skill' menu item does nothing  
-* 'Post Vacancy' is getting an error when user not signed in (tko - got in a hurry and broke it this morning 20 Sept)  
+* Messaging system (proposals) (partially implemented)  
+* We own www.stepupvolunteers.com, but it is not configured properly to route to Heroku.
+* 'More info' static page has not been written yet.  
+* 'Post Skill' menu item does nothing.  
+
+###New Issues
+* If user is not signed in, clicking Browse Volunteers should redirect to Browse Volunteers after successful sign-in (instead of profile page)
+* '1 volunteers' or '1 vacancies' text if filters result in one record - should use pluralize()
+* Google Maps tooltips - mouseout function is commented - why?
+* 'Make a Proposal' for a vacancy when logged in as an NGO leads to error page
+* Submit Proposal screen  
+  Font for 'Message' textbox doesn't match
+* User registration  
+  Terms and Conditions checkbox tiny (doesn't match other checkboxes)
+* Lots of failing tests
 
 ###Tammy's List
 * Placeholders are missing from some screens (quick job - I will fill in)  
+* Submit Proposal screen  
+  (Fix grammar)
 
 ###Not needed for demo (?)
 * Corporate reporting/analytics system
@@ -33,25 +38,19 @@ by [Tammy Orr, Ivan Mani, and Charlotte Fisher](http://www.endsvchack.com/projec
 * Corporate profiles  
 * Map labels do not group when many labels are in a small area (plugins to do this quickly are expensive)  
 * Terms and conditions have not been written
+* Hovering on map labels - consider tablet/mobile view (no hover) (probably not needed for demo)  
+* Browse volunteers and browse vacancies - lists should look much better when graphics are added  
+
+## Implemented
+* 'I have read these Terms and Conditions...' checkbox must be checked to register  
+* Browse volunteers and browse vacancies:  
+  Filter -> 'Apply' buttons work  
+  Vacancies can now be sorted by NGO  
+* Hovering on a map label now shows more info (& larger font)  
+* 'Post Vacancy' bug is fixed  
 
 ## Developer notes
 
-###IMPORTANT
-
-* The most recent version of one of the SASS-related gem dependencies (from August 28ish) causes the CSS files to fail to compile. (The problem seems to be an error in the new SASS gem or in one of the Bootstrap files.) I've read the Bootstrap files have a missing semicolon somewhere, which might be the problem. But I could not find it. I am avoiding 'bundle update' and using the pre-August-28 SASS dependency for the time being.  
-
-* Heroku assets need to be precompiled so that Heroku doesn't try to 'bundle update'. ('Bundle update' results in the CSS error mentioned above, which causes deployment failure.) Before every push, manually precompile as follows:  
-```
-rm -rf tmp/*  
-rm -rf public/assets/*  
-RAILS_ENV=production rake assets:precompile --trace  
-```
-and then of course:  
-```
-(git add ., git commit, git push (--all), git push (-f) heroku branch-name:master)  
-```
-
-This of course makes a mess in git. So please do it as its own separate commit (i.e. `git commit -am 'Precompile assets for Heroku'`).
 
 ### Design issues
 * Most input fields are unrestricted string fields without constraints
