@@ -27,9 +27,15 @@
       </form-->
       <ul class="nav navbar-nav navbar-right">
         <!-- li class="active"><a href="#">Home</a></li-->
+
+        <!--Browse Vacancies-->
+        <li><%= link_to "Browser Vacancies", vacancies_path %></li>
+
+        <li><%= link_to "Browser Volunteers", volunteers_path %></li>
+
         <% if !signed_in? || current_user.ngo.nil? %>
           <!--li><img src="<%= asset_path('icomoon-accessibility.png') %>" alt="Post Skill" class="menu-img"/></li-->
-          <li><a href="#">Post Skill</a></li>
+          <!-- <li><a href="#">Post Skill</a></li> -->
         <% end %>
         <% if !signed_in? || current_user.volunteer.nil? %>
           <!--li><img src="<%= asset_path('icomoon-user2.png') %>" alt="Post Vacancy" class="menu-img"/></li-->
@@ -44,7 +50,7 @@
 
         <% if signed_in? %>
           <!--li><span class="glyphicon glyphicon-envelope"></span></li-->
-          <li><a href="#">Messages <span class="badge">2</span></a></li>
+          <!-- <li><a href="#">Messages <span class="badge">2</span></a></li> -->
 
           <li id="fat-menu" class="dropdown">
             <!--li><img src="<%= asset_path('icomoon-user3.png') %>" alt="My Account" class="menu-img"/></li-->
